@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import './style.css'
 import img_followers from '../../assets/followers.svg'
 import img_following from '../../assets/followers.svg'
@@ -7,60 +6,47 @@ import img_location from '../../assets/location.svg'
 import img_repository from '../../assets/repository.svg'
 import img_logo from '../../assets/logo.svg'
 
-function Card(){
-    const [user,setUser] = useState({name:'', avatar:'', following:'', followers: '', repos:'',company: '', location:''});
-
-    useEffect(()=>{
-        fetch("https://api.github.com/users/1felipeaac")
-        .then(response => response.json())
-        .then(data => {
-          setUser({
-            avatar: data.avatar_url,
-            name: data.name,
-            following: data.following,
-            followers: data.followers,
-            repos: data.public_repos,
-            company: data.company,
-            location: data.location
-          })
+function Card({name, avatar, following, followers, repos, company, location}){
   
-        })
-        .catch(e => console.error(e))
-    },[])
   
     return (
       <div className="card">
         <main>
+          <div id='border'></div>
           <section>
             <img id='logo' src={img_logo} alt="" />
-            <strong>{user.name}</strong>
+            <strong>{name}</strong>
           </section>
-          <img id='avatar' src={user.avatar} alt="" />
+          <img id='avatar' src={avatar} alt="" />
           <ul>
             <li>
               <img src={img_followers} alt="" />
-              <p>{user.followers}</p>
+              <p>{followers}</p>
               followers
             </li>
             <li>
               <img src={img_following} alt="" />
-              <p>{user.following}</p>
+              <p>{following}</p>
               following
             </li>
             <li>
               <img src={img_repository} alt="" />
-              <p>{user.repos}</p>
+              <p>{repos}</p>
               repositórios
             </li>
             <li>
               <img src={img_company} alt="" />
-              <p>{user.company}</p>
+              <p>{company}</p>
             </li>
             <li>
               <img src={img_location} alt="" />
-              <p>{user.location}</p>
+              <p>{location}</p>
             </li>
           </ul>
+          <section id='section_footer'>
+            <img id='footer' src={img_logo} alt="" />
+            <strong>ROCKETCARD</strong>
+          </section>
         </main>
         <aside>
           <h1>Customizar RocketCard</h1>
@@ -69,5 +55,6 @@ function Card(){
       </div>
     )
 }
+
 
 export default Card

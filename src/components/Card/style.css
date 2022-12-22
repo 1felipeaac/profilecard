@@ -1,12 +1,3 @@
-:root {
-    --bg: #000000;
-    --bg-card: #0E1218;
-    --text: #F1F1F1;
-    --img-profile: #8257e5;
-    --buttons: #FFF;
-    --border-button: #1A1A1A;
-  }
-
 .card{
     display: grid;
     grid-template-areas: 
@@ -15,28 +6,44 @@
     grid-template-rows: 1fr;
     grid-auto-columns: 1fr 1fr;
     background-color: var(--bg);
+    padding: 50px 200px;
+    /* column-gap: 2rem; */
+    /* border: 1px solid red; */
 }
 
 main{
     grid-area: main;
-    border: 15px solid red;
+    /* border: 1px solid red; */
     color: var(--text);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 
-    border-radius: 30px;
-    width: 300px;
-    padding: 10px;
+    width: fit-content;
+    /* height: 500px; */
+    padding: 20px 10px;
+    box-sizing: border-box;
     
+}
+
+#border{
+    border: 20px solid var(--bg-card);
+    border-radius: 30px;
+    height: 600px;
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
 }
 
 section{
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding-top: 20px;
+    padding-left: 30px;
 }
 
 /* strong{
@@ -52,29 +59,57 @@ section{
 }
 
 #avatar{
-    width: 200px;
+    width: 250px;
     height: auto;
-    border-radius: 100px;
+    border-radius: 150px;
+    /* position: absolute; */
     border: 5px solid var(--img-profile);
+    position: relative;
+    top: 30px;
+    left: 70px;
 }
 
 ul{
     list-style: none;
     background: var(--bg-card);
     color: white;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     border-radius: 20px;
-    width:125px;
+    width:150px;
     opacity: 0.7;
+    position: relative;
+    z-index: 1;
+    bottom: 10px;
+    left: 20px;
+    /* display: flex;
+    flex-direction: column;
+    row-gap: 0rem; */
 }
 
 li{
     display: flex;
     align-items: center;
     gap: .5rem;
+    height: 30px;
+}
+
+#section_footer{
+    position: relative;
+    left: 100px;
+    /* bottom: -20px; */
+}
+
+#footer{
+    width: 40px;
+    height: 40px;
+    padding: 0;
 }
 
 aside{
     grid-area: aside;
-    border: 1px solid red;
+    /* border: 1px solid var(--bg-card); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
