@@ -1,0 +1,43 @@
+.border_blue{
+    --bg-card: blue;
+    
+}
+.border_green{
+    --bg-card: green;
+}
+
+.border_red{
+    --bg-card: red;
+}
+
+.border_yellow{
+    --bg-card: yellow;
+}
+
+.border_orange{
+    --bg-card: orange;
+}
+
+.border_pink{
+    --bg-card: pink;
+}
+
+.border_violet{
+    --bg-card: violet;
+}
+
+.border_purple{
+    --bg-card: purple;
+}
+
+.border_brown{
+    --bg-card: brown;
+}
+
+.border_lime{
+    --bg-card: lime;
+}
+
+.border_turquoise{
+    --bg-card: turquoise;
+}

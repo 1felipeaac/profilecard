@@ -5,8 +5,33 @@ import img_company from '../../assets/company.svg'
 import img_location from '../../assets/location.svg'
 import img_repository from '../../assets/repository.svg'
 import img_logo from '../../assets/logo.svg'
+import { useEffect, useRef } from 'react'
 
 function Card({name, avatar, following, followers, repos, company, location}){
+
+  const ref = useRef(null);
+
+  useEffect(()=>{
+
+    const element = ref.current
+
+    const colors = ['border_blue', 'border_red', 'border_green','border_yellow', 'border_orange', 'border_pink','border_violet', 'border_purple', 'border_brown','border_lime', 'border_turquoise'];
+    const border = document.getElementById('border');
+    let cont = -1;
+
+    element.addEventListener('click', function(){
+      cont++
+      border.className = colors[cont]
+      
+      if(cont == colors.length){
+        cont = -1
+      }
+
+      
+
+
+    })
+  });
   
   
     return (
@@ -50,7 +75,7 @@ function Card({name, avatar, following, followers, repos, company, location}){
         </main>
         <aside>
           <h1>Customizar RocketCard</h1>
-          <button>Gerar Background</button>
+          <button ref={ref}>Gerar Background</button>
         </aside>
       </div>
     )

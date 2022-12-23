@@ -12,3 +12,21 @@ body{
     color: var(--text);
     font-family: 'Prompt', sans-serif;
 }
+
+@media (max-width: 465px){
+  .card{
+    display: grid;
+    grid-template-areas: 
+    "main"
+    "aside"
+    ;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    background-color: var(--bg);
+    padding: 50px 20px;
+    row-gap: 2rem;
+    /* border: 1px solid red; */
+  }
+
+
+}
