@@ -38,7 +38,7 @@ function Card({name, avatar, following, followers, repos, company, location}){
       <div className="card">
         <main>
           <div id='border'></div>
-          <section>
+          <section id='section_name'>
             <img id='logo' src={img_logo} alt="" />
             <strong>{name}</strong>
           </section>
@@ -75,7 +75,7 @@ function Card({name, avatar, following, followers, repos, company, location}){
         </main>
         <aside>
           <h1>Customizar RocketCard</h1>
-          <button ref={ref}>Gerar Background</button>
+          <button id='button_bg' ref={ref}>Gerar Background</button>
         </aside>
       </div>
     )
